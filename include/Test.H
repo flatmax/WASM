@@ -29,9 +29,19 @@
 #ifndef TEST_H_
 #define TEST_H_
 
+class Base1 {
+public:
+  void callBase1(){}
+};
+
+class Base2 {
+public:
+  void callBase2(){}
+};
+
 /** Class to test the wasm setup
 */
-class Test {
+class Test : public Base1, public Base2 {
 public:
   /** Constructor
   */

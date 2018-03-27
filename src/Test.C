@@ -45,7 +45,14 @@ void Test::sayHello(){
 #ifdef HAVE_EMSCRIPTEN
 #include <emscripten/bind.h>
 EMSCRIPTEN_BINDINGS(Test_ex) {
-  emscripten::class_<Test>("Test")
+  emscripten::class_<Base1>("Base1")
+  .function("callBase1", &Base1::callBase1);
+  emscripten::class_<Base2>("Base2")
+  .function("callBase2", &Base2::callBase2);
+  //  emscripten::class_<Test>("Test") // this works !
+  //  emscripten::class_<Test, emscripten::base<Base1>>("Test") // this works !
+  //  emscripten::class_<Test, emscripten::base<Base1>, emscripten::base<Base2>>("Test") // this doesn't work
+  emscripten::class_<Test, emscripten::base<Base1, Base2>>("Test") // this doesn't work
   .constructor()
   .function("sayHello", &Test::sayHello)
   ;
