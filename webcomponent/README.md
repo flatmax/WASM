@@ -19,5 +19,5 @@ npm i
 ### Viewing Your Element
 
 ```
-$ polymer serve
+npm start
 ```

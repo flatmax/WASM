@@ -8,43 +8,39 @@ You can test the output for this packaing using nodejs in the nodejs directory.
 # Building
 ## Initial Setup
 
+```
 ./autogen.sh
+```
 
-### WASM
+## standard autotools C++ builds work as expected
 
-source /usr/local/emsdk/emsdk_env.sh
-
-## configuring
-### native C++
+```
+./autogen.sh
 ./configure
-
-### WASM
-emconfigure ./configure
-
-## building
-### native C++
 make
-### WASM
+```
+
+## WASM builds
+
+```
+./autogen.sh
+source /usr/local/emsdk/emsdk_env.sh
+emconfigure ./configure
 emmake make
+```
+
 
 ## installing
 
-Really ?
+It is possible - but you probably don't want to : make install
 
 # Running the nodejs version
 
 ./nodejs/WASMTestNode.js
 
-# Running the webapp
-
-Open a new terminal, then :
-
+# Running the webcomponent
+```
 cd webcomponent
-
-### installing
-
 npm i
-
-### running
-
-polymer serve # or user a different serving mechanism if you don't have polymer
+npm start
+```

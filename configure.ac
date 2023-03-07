@@ -31,7 +31,7 @@ m4_define([wasm_revision_version], [0]) # ++ if API same but src code change
 m4_define([wasm_age_version], [0]) # ++ if API added since last release, if API removed or changed then age=0
 m4_define([wasm_version], [wasm_current_version.wasm_revision_version.wasm_age_version])
 
-AC_INIT( wasm, [wasm_version], [ https://github.com/madChopsCoderAu/WASM/issues ])
+AC_INIT([wasm],[wasm_version],[ https://github.com/madChopsCoderAu/WASM/issues ])
 AM_INIT_AUTOMAKE
 AC_CONFIG_SRCDIR([include/Test.H])
 AC_CONFIG_HEADERS([config.h])

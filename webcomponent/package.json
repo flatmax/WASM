@@ -14,9 +14,13 @@
   },
   "homepage": "http://shop.audioinjector.net",
   "dependencies": {
-    "lit": "*"
+    "lit": "^2.3.1"
   },
   "devDependencies": {
-    "@webcomponents/webcomponentsjs": "^2.4.3"
+    "@web/dev-server": "^0.1.35",
+    "@webcomponents/webcomponentsjs": "^2.4.4"
+  },
+  "scripts": {
+    "start": "wds"
   }
 }

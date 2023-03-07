@@ -32,3 +32,4 @@ node_modules
 a.wasm
 package-lock.json
 libwasm.js
+*~
