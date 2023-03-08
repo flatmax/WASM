@@ -9,7 +9,6 @@ class DemoExample extends LitElement {
       <libwasm->
         libwasm- loading ...
       </libwasm->
-      check your console for WASM output!
     `;
   }
 }
