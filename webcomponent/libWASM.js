@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-let modProm = import('./libwasm.js'); //.then(mod=> console.log(mod));
+let modProm = import('./libwasm.js');
 
 /**
  * libwasm WASM loader
