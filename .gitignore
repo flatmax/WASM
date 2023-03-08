@@ -33,3 +33,4 @@ a.wasm
 package-lock.json
 libwasm.js
 *~
+a.out.wasm

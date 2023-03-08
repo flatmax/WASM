@@ -15,7 +15,6 @@ export class LibWASM extends LitElement {
 
   constructor() {
     super();
-    console.log('constructor')
     modProm.then((mod)=>{
       this.libWASM = mod;
       this.WASMReady();
