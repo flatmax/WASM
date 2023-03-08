@@ -35,7 +35,7 @@ libwasm_la_LDFLAGS =  -version-info $(LT_CURRENT) -release $(LT_RELEASE)
 if HAVE_EMSCRIPTEN
 all-local: libwasm.la
 	@echo binding webcomponent libwasm
-	@emcc -lembind -sSINGLE_FILE -sALLOW_MEMORY_GROWTH=1 -sMODULARIZE -sEXPORT_NAME="libwasm" $(AM_CXXFLAGS) .libs/libwasm.so -o .libs/libwasm.js
+	@emcc -lembind -sSINGLE_FILE -sALLOW_MEMORY_GROWTH=1 -sEXPORT_ES6=1 -sMODULARIZE -sEXPORT_NAME="libwasm" $(AM_CXXFLAGS) .libs/libwasm.so -o .libs/libwasm.js
 	cp .libs/libwasm.js ../webcomponent/
 	cp .libs/libwasm.js ../nodejs/libwasmNode.js
 install-exec-hook:

@@ -1,5 +1,5 @@
 import { LitElement, html } from 'lit';
-let modProm = import('./libwasm.js');
+import modProm from './libwasm.js';
 
 /**
  * libwasm WASM loader
@@ -15,7 +15,7 @@ export class LibWASM extends LitElement {
 
   constructor() {
     super();
-    modProm.then((mod)=>{
+    modProm().then((mod)=>{
       this.libWASM = mod;
       this.WASMReady();
     })
@@ -24,7 +24,6 @@ export class LibWASM extends LitElement {
   /// overload this to execute something when the WASM has finished compiling
   WASMReady(){
     console.log('WASM module compiled and ready to go.')
-    console.log(this.libWASM)
     let test = new this.libWASM.Test;
     test.sayHello();
   }
